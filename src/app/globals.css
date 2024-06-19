@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+body {
+  background-image:url('/assets/images/bgimage.png');
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
