@@ -1,35 +1,30 @@
 'use client'                                        // importante para o next conseguir importa
-import { useContext, useEffect, useState } from "react";
-
-import Button from "@/app/componets/Button";
-import { IconFolderPlus, IconHomeBolt} from "@tabler/icons-react"
-import {SuperTagsProvider} from "@/app/context/SuperTagsContext";
-import ListFolderFiles from "@/app/componets/ListFolderFiles";
+import { SuperTagsProvider } from "@/app/context/SuperTagsContext";
+import { SelectedSuperTagProvider } from "@/app/context/SelectedSuperTagContext";
+import RenderFolderFiles from "@/app/componets/RenderFolderFiles";
+import Profile from "@/app/componets/Profile";
+import Settings from "@/app/componets/Settings";
+import Selected from "@/app/componets/Selected";
 
 
 export default function List() {
 
     return (
-        <div className="w-full">
-            <SuperTagsProvider >
-                <ListFolderFiles />
-            </SuperTagsProvider>
-            <div className="flex justify-center w-full my-5">
-                <Button>
-                    <div className="flex justify-center items-center gap-2"><IconFolderPlus />
-                        Adicionar
-                    </div>
-                </Button>
-            </div>
+        <SelectedSuperTagProvider>
+            <div className="flex flex-row w-full">
+                <div className="flex flex-col w-[328px] gap-5 ">
+                    <Profile />
+                    <Settings />
+                    <div className="mt-2 text-white text-3">SUPERTAGS</div>
+                    <SuperTagsProvider >
+                        <RenderFolderFiles fatherId={null} />
+                    </SuperTagsProvider>
 
-            <div className="flex justify-end w-full my-5 pr-5">
-                <Button url="/">
-                    <div className="flex justify-center items-center gap-2">
-                        <IconHomeBolt />
-                        Login
-                    </div>
-                </Button>
+                </div>
+                <div className="flex-1  text-white">
+                    <Selected />
+                </div>
             </div>
-        </div>
+        </SelectedSuperTagProvider>
     )
 }

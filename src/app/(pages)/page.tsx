@@ -1,4 +1,4 @@
-import { IconHomeBolt, IconList, IconLogin } from "@tabler/icons-react";
+import { IconLogin } from "@tabler/icons-react";
 import Button from "../componets/Button";
 import Input from "../componets/Input";
 

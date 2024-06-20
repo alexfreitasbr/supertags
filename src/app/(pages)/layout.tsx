@@ -9,7 +9,7 @@ export default function Layout({ children }: any) {
             <Header />
             <div className="flex justify-center  h-full">
                 <LoginProvider>
-                    <main className="flex justify-center mt-[72px] w-[1100px]">
+                    <main className="flex justify-center mt-[72px] w-full max-w-7xl">
                         {children}
                     </main>
                 </LoginProvider>

@@ -5,4 +5,4 @@ export interface SuperTag {
     idt_folder_file:  1 | 2
     id_tag_pai:       number | null
 }
-export type Supertags = SuperTag[]
+export type SuperTags = SuperTag[]
